@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Nixie+One');
+
+html, body {
+  margin: 0;
+	height: 100%;
+	width: 100%;
+	display: table;
+} */
+
+ html {
+	background-repeat: repeat;
+	background-position: center center;
+}
+
+body {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.73) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.04)), color-stop(100%,rgba(0,0,0,0.73)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.04) 0%,rgba(0,0,0,0.73) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.04) 0%,rgba(0,0,0,0.73) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.04) 0%,rgba(0,0,0,0.73) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.04) 0%,rgba(0,0,0,0.73) 100%);	
+}
+
+h1 {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+i {
+  font: normal 20px/ 0px 'Nixie One', Helvetica, Arial;
+	color: #EEDDE0;
+	text-shadow: 0 0 30px #531eaa, 
+		0 0 10px rgba(230, 161, 173, 0.41), 
+		0 0 50px #a1bfe6, 
+		0 0 100px #3d148a, 
+		5px 9px 5px rgba(0, 0, 0, 0.5);
+}
+
+i.off {
+	color: rgba(46, 46, 46, 0.61);
+	text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#button{
+    width: 10vw;
+    height: auto;
+    border-bottom: 3px solid #dfdfdf;
+}
+
+#button:hover{
+    border: 1px solid #fffff1;
+}
+
+textarea{
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+#barcode{
+    width: 85vw;
+    height: auto;
+}
