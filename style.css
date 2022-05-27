@@ -53,11 +53,11 @@ i.off {
 #button{
     width: 10vw;
     height: auto;
-    border-bottom: 3px solid #dfdfdf;
+    border-bottom: 3px solid #9f9f9f;
 }
 
 #button:hover{
-    border: 1px solid #fffff1;
+    border: 1px solid #9f9f9f;
 }
 
 textarea{
