@@ -25,6 +25,7 @@ function getBarcode(row){
     document.getElementById('shtrihPicture').src = source;
 }
 
+recognition.lang = 'ru-ru';
 recognition.continuous = true;
 recognition.start();
 
