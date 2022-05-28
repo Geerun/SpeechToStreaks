@@ -1,6 +1,6 @@
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
-var noteTextarea = $('#result-area');
+var Textarea = document.getElementById('title');
 let slot = '',
 sl = '',
 w = '';
@@ -10,11 +10,11 @@ const r = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087909'];
 
 function makeSlot() {for (let i = 10; i <=142; i++){
     t[i]=('S' + (200088170+i)); 
-    console.log(' t '+i + ' '+t[i])
+    // console.log(' t '+i + ' '+t[i])
     s[i]=('S' + (200088035+i));
-    console.log(' s '+i + ' '+s[i])
+    // console.log(' s '+i + ' '+s[i])
     r[i]=('S' + (200087900+i));
-    console.log(' r '+i + ' '+r[i])
+    // console.log(' r '+i + ' '+r[i])
 }
 }
 makeSlot();
@@ -35,8 +35,6 @@ recognition.onresult = function(event) {
     var transcript = event.results[current][0].transcript;
        sl = transcript.toLowerCase().replace(/[^0-9]/gim,'');
        w = transcript.toLowerCase().replace(/[^т,с,р,t,s,r]/gim,'');
-        
-        console.log(w + sl)
 
         switch (w) {
             case 'т':
@@ -51,20 +49,18 @@ recognition.onresult = function(event) {
             case 'r':
                 getBarcode(r)
                     break;
-        
             default:
                 break;
         }
-   
     var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
     if (!mobileRepeatBug) {
-        noteTextarea.val(w + sl);
+        Textarea.textContent = (w.toUpperCase() + sl);
     }
 };
 
 $('#button').on('click', function(e) {
     document.documentElement.requestFullscreen();
-    noteTextarea.val('Listening...');
+    Textarea.textContent = ('Listening...');
     document.getElementById('shtrihPicture').src = 'https://barcode.tec-it.com/barcode.ashx?data=' + slot + '&code=Code128&translate-esc=on';
     recognition.start();
 });
