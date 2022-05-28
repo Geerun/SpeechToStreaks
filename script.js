@@ -36,7 +36,7 @@ recognition.onresult = function(event) {
        sl = transcript.toLowerCase().replace(/[^0-9]/gim,'');
        w = transcript.toLowerCase().replace(/[^т,с,р,t,s,r]/gim,'');
 
-        switch (w) {
+        switch (w[0]) {
             case 'т':
             case 't':
                 getBarcode(t)
@@ -54,7 +54,7 @@ recognition.onresult = function(event) {
         }
     var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
     if (!mobileRepeatBug) {
-        Textarea.textContent = (w.toUpperCase() + sl);
+        Textarea.textContent = (w[0].toUpperCase() + sl);
     }
 };
 
