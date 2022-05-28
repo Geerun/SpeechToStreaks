@@ -16,7 +16,6 @@ html, body {
 #button{
     width: 15vw;
     height: auto;
-    border-bottom: 3px solid #ffffff;
 }
 
 #button:hover{
