@@ -79,6 +79,6 @@ recognition.onresult = function(event) {
 $('#button').on('click', function(e) {
     document.documentElement.requestFullscreen();
     Textarea.textContent = ('Listening...');
-    document.getElementById('shtrihPicture').src = 'https://barcode.tec-it.com/barcode.ashx?data=' + slot + '&code=Code128&translate-esc=on';
+    // document.getElementById('shtrihPicture').src = 'https://barcode.tec-it.com/barcode.ashx?data=' + 'generic' + '&code=Code128&translate-esc=on';
     recognition.start();
 });
