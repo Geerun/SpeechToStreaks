@@ -7,14 +7,19 @@ w = '';
 const t = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088179']; //9i slot
 const s = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088044'];
 const r = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087909'];
+const p = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087773'];
+const o = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087638'];
+const a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088313'];
+
+
 
 function makeSlot() {for (let i = 10; i <=142; i++){
     t[i]=('S' + (200088170+i)); 
-    // console.log(' t '+i + ' '+t[i])
     s[i]=('S' + (200088035+i));
-    // console.log(' s '+i + ' '+s[i])
     r[i]=('S' + (200087900+i));
-    // console.log(' r '+i + ' '+r[i])
+    p[i]=('S' + (200087764+i)); 
+    o[i]=('S' + (200087629+i));
+    a[i]=('S' + (200088304+i));
 }
 }
 makeSlot();
@@ -35,7 +40,7 @@ recognition.onresult = function(event) {
     // Get a transcript of what was said.
     var transcript = event.results[current][0].transcript;
        sl = transcript.toLowerCase().replace(/[^0-9]/gim,'');
-       w = transcript.toLowerCase().replace(/[^т,с,р,t,s,r]/gim,'');
+       w = transcript.toLowerCase().replace(/[^т,с,р,а,п,о,t,s,r,a,p,o]/gim,'');
 
         switch (w[0]) {
             case 'т':
@@ -50,6 +55,18 @@ recognition.onresult = function(event) {
             case 'r':
                 getBarcode(r)
                     break;
+            case 'o':
+            case 'о':
+                getBarcode(o)
+                    break;
+            case 'p':
+            case 'п':
+                getBarcode(p)
+                break;
+            case 'a':
+            case 'а': //ru
+                getBarcode(a)
+                break;
             default:
                 break;
         }
