@@ -81,7 +81,7 @@ recognition.onresult = function(event) {
 };
 
 $('#button').on('click', function(e) {
-    // document.documentElement.requestFullscreen();
+    document.documentElement.requestFullscreen();
     Textarea.textContent = ('Listening...');
     recognition.start();
 });
