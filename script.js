@@ -10,7 +10,8 @@ const r = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087909'];
 const p = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087773'];
 const o = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087638'];
 const a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088313'];
-const generalArray = ['PER7G'];
+const generalArray = ["A3515LAE77Q","C840N35444",'PER7G'];
+const generalArrayInterpritation = ["отвязка","техника","переборка"];
 
 
 function makeSlot() {for (let i = 10; i <=142; i++){
@@ -43,7 +44,18 @@ recognition.onresult = function(event) {
     //    w = transcript.toLowerCase().replace(/[^т,с,р,а,п,о,t,s,r,a,p,o]/gim,'');
        w = transcript.toLowerCase().replace(/[^a-z,а-я]/gim,'');
 
-    if (w == "переборка"){sl = 0; getBarcode(generalArray)} else {
+    // if (w == "переборка"){sl = 0; getBarcode(generalArray)} else {
+    switch (w) {
+        case "отвязка":
+            sl = 0; getBarcode(generalArray)
+            break;
+        case "техника":
+            sl = 1; getBarcode(generalArray)
+            break;
+        case "переборка":
+            sl = 2; getBarcode(generalArray)
+            break;
+        default:
         switch (w[0]) {
             case 'т':
             case 't':
@@ -72,12 +84,12 @@ recognition.onresult = function(event) {
             default:
                 break;
         }
+        
     }
 
     var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
     if (!mobileRepeatBug) {
-        Textarea.textContent = (w == 'переборка' ? w : (w[0].toUpperCase() + sl));
-    }
+        Textarea.textContent = (generalArrayInterpritation.includes(w) ? w : (w[0].toUpperCase() + sl));    }
 };
 
 $('#button').on('click', function(e) {
