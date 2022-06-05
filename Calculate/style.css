@@ -1,0 +1,26 @@
+* {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+h1 {color: burlywood;}
+
+p {
+    color: cornsilk;
+    margin-bottom: 0;
+    }
+
+.clear {
+    display: grid;
+    width: 5ch;
+    height: 50px;
+    grid-template-columns: 100px auto 150px;
+
+}
+
+.btncalc { width: 160px;
+background: grey;
+border-color: ghostwhite;}
+
+.inwin {
+    background-color: seashell;
+
+}
+

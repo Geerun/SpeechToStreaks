@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <script src="script.js"></script>
+</head>
+
+<body background="gradient-15.jpg">
+
+<form action="">
+    <h1>Calculate<img height="25px" src="usa.png" alt=""></h1>
+        <div class="clear">
+    <p>Подъемы</p>
+    <input type="reset" title="Clear" value="Clear" style="height: 30px; width: 57px">
+        </div>
+    <input class="inwin" id="pod" type="text" >
+    <p>Спуски</p>
+    <input class="inwin" id="spus" type="text">
+    <p>Пополнения</p>
+    <input class="inwin" id="pop" type="text">
+    <p>Перемещения</p>
+    <input class="inwin" id="per" type="text">
+    <p>Часы</p>
+    <input class="inwin" id="chas" type="text" value="11" >
+</form>
+
+    <script> getOldData(); </script>
+<br>
+<br>
+
+    <a href="#b" id=""><button class="btncalc" onclick="calculate()"><img height="50" src="speedcrunch.png"></button></a>
+    <a href="#x" class="overlay" id="b"></a>
+    
+    <div class="window" id="winres">
+        <label id="oper"></label>
+        <br>
+        <label id="popoper"></label>
+        <br>
+        <label id="okl"></label>
+        <br>
+        <label id="stg"></label>
+        <br>
+        <label id="itogo"></label>
+        <br>
+        <label style="background-color: black; color: bisque">Чистыми </label>
+        <label id="popop" style="background-color: black; color: lime"></label>
+        <a class="close" title="Закрыть" href="#close" onclick="clos"></a>
+    </div>
+    
+</body>
+</html>

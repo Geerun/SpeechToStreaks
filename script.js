@@ -46,6 +46,9 @@ recognition.onresult = function(event) {
 
     // if (w == "переборка"){sl = 0; getBarcode(generalArray)} else {
     switch (w) {
+        case "смена": 
+            document.location = "/Calculate/index.html";
+            break;
         case "отвязка":
             sl = 0; getBarcode(generalArray)
             break;
