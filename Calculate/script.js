@@ -1,6 +1,4 @@
-
 function getOldData() {
-
    document.getElementById('pod').value = localStorage['pod'];
    document.getElementById('pop').value = localStorage['pop'];
    document.getElementById('per').value = localStorage['per'];
@@ -8,8 +6,6 @@ function getOldData() {
 }
 
 function calculate() {
-
-   
       var p, s, p1, p2, t, oo, sumo,toto, stazh,gsum = 0;
       p = +document.getElementById('pod').value;
       s = +document.getElementById('spus').value;
@@ -19,8 +15,8 @@ function calculate() {
       
       toto = p+s+p1+p2;
       oo = (p1*7.7)+(p2*2.5)+(s*3.98)+(p*3.73);
-      stazh = (oo + t*64)/10;
-      gsum = oo+stazh+t*64;
+      // stazh = (oo + t*64)/10;
+      gsum = oo+t*64; //+stazh
       sumo = gsum*0.87;
 
 document.getElementById('oper').textContent = ("Операций " + Math.floor(toto));
@@ -34,12 +30,8 @@ localStorage.setItem("pod", p);
 localStorage.setItem("spus", s);
 localStorage.setItem("pop", p1);
 localStorage.setItem("per", p2);
-
+setTimeout("document.location = '../index.html'", 4000);
 }
 
 function clos() {
-   
-   document.getElementById('winres').display.none;
-
-
-}
+   document.getElementById('winres').display.none;}

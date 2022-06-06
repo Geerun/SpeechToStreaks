@@ -15,6 +15,13 @@ background-color: #000000;
 text-align: right;
 }
 
+#wifiLogo{
+    width: 30px;
+    height: 30px;
+    /* position: ute; */
+    margin-left: 80%;
+}
+
 .setIcon{
     width: 5vw;
     margin-top: 15px;
