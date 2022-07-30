@@ -10,8 +10,8 @@ const r = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087909'];
 const p = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087773'];
 const o = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087638'];
 const a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088313'];
-const generalArray = ["A3515LAE77Q","C840N35444",'PER7G'];
-const generalArrayInterpritation = ["отвязка","техника","переборка"];
+const generalArray = ["A3515LAE77Q","C840N35444",'PER7G','S200131551'];
+const generalArrayInterpritation = ["отвязка","техника","переборка","арбуз"];
 
 
 function makeSlot() {for (let i = 10; i <=142; i++){
@@ -58,6 +58,9 @@ recognition.onresult = function(event) {
         case "переборка":
             sl = 2; getBarcode(generalArray)
             break;
+        case "арбуз":
+            sl = 3; getBarcode(generalArray)
+            break;
         default:
         switch (w[0]) {
             case 'т':
@@ -100,3 +103,4 @@ $('#button').on('click', function(e) {
     Textarea.textContent = ('Listening...');
     recognition.start();
 });
+
