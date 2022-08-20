@@ -10,6 +10,7 @@ const r = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087909'];
 const p = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087773'];
 const o = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200087638'];
 const a = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088313'];
+const b = [0, 0, 0, 0, 0, 0, 0, 0, 0, 'S200088448'];
 const generalArray = ["A3515LAE77Q","C840N35444",'PER7G','S200131551'];
 const generalArrayInterpritation = ["отвязка","техника","переборка","арбуз"];
 
@@ -21,6 +22,7 @@ function makeSlot() {for (let i = 10; i <=142; i++){
     p[i]=('S' + (200087765+i)); 
     o[i]=('S' + (200087630+i));
     a[i]=('S' + (200088305+i));
+    b[i]=('S' + (200088440+i));
 }
 }
 makeSlot();
@@ -87,6 +89,11 @@ recognition.onresult = function(event) {
             case 'а': //ru
                 getBarcode(a)
                 break;
+            case 'b':
+            case 'б':
+                getBarcode(b)
+                break;
+
             default:
                 break;
         }
